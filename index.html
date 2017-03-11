@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS test</title>
+    <link href="css/app.css" rel="stylesheet"> 
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"> 	
+  </head>
+  <body ng-controller="AppController as app">
+    <main>
+		<div ng-repeat="dataSet in dataSets" class = "data-set">
+			<div class = "data-set-inner">
+				<form class="search-form">
+					<input type="text" class="form-control" placeholder="Поиск" ng-model="searchField">
+					<span class="icon"><i class="fa fa-search fa-lg"></i></span>
+				</form>
+				<table>
+					<thead>
+						<th ng-repeat="(headerKey, headerValue) in dataSet.headers" ng-click="setSortProp(headerKey, dataSet.tableIndex)"><a href >{{headerValue}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a></th>
+					</thead>
+					<tbody>
+						<tr ng-repeat="listItem in dataSet.pagedItems[dataSet.currentPage]| orderBy:dataSet.sortType:dataSet.sortReverse| filter:searchField" ng-click="showCurrentRow(dataSet.currentPage, $index, dataSet.tableIndex)"> 
+							<td ng-repeat="(listItemKey, listItemValue) in listItem">{{listItemValue}}</td>
+					</tbody>
+					<tfoot ng-show="dataSet.needPagination">
+						<td colspan="{{dataSet.columnsCount}}">
+							<div class="pagination pull-right">
+								<ul>
+									<li ng-class="{disabled: dataSet.currentPage == 0}">
+										<a href ng-click="prevPage(dataSet.tableIndex)">« Prev</a>
+									</li>
+								
+									<li ng-repeat="n in range(dataSet.pagedItems.length, dataSet.currentPage, dataSet.currentPage + dataSet.gap, dataSet.gap) "
+										ng-class="{active: n == dataSet.currentPage}"
+									ng-click="setPage(dataSet.tableIndex)">
+										<a href ng-bind="n + 1">1</a>
+									</li>
+								 
+									<li ng-class="{disabled: (dataSet.currentPage) == dataSet.pagedItems.length - 1}">
+										<a href ng-click="nextPage(dataSet.tableIndex)">Next »</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tfoot>
+				</table>
+				<ul class="current-row">
+					<li>Текущая строка:</li>
+					<li ng-repeat="(currentRowKey, currentRowValue) in dataSet.currentRow" ><strong>{{currentRowKey}}: </strong>{{currentRowValue}}</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class = "choice">
+			<div ng-show="addDataSetButtonVisible" ng-click="choiceDataSetInputsVisible=true" class = "add-data-set">
+				<a href><i class="fa fa-plus fa-lg"></i> Добавить еще один</a>
+			</div>
+			<div ng-show="choiceDataSetInputsVisible" class = "input-set">
+				<span>Набор данных:</span>
+				<input ng-click="getDataSet()" ng-model="radioValue" type="radio" name="group1" value="big"> Большой
+				<input ng-click="getDataSet()" ng-model="radioValue" type="radio" name="group1" value="little"> Маленький
+				<input ng-click="getDataSet()" ng-model="radioValue" type="radio" name="group1" value="custom"> Свой
+			</div>
+		</div>
+    </main>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </body>
+</html>

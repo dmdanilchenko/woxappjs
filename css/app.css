@@ -1,0 +1,181 @@
+html, body {
+	font-family: Myriad Pro, Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+	background: #eff4f9;
+}
+.choice{
+    margin: 10px 20px 20px 20px;
+}
+.choice .add-data-set a{
+    display: inline-block;
+	text-decoration: none;
+	margin-bottom: 20px;
+    padding: 0 35px;
+    height: 35px;
+    line-height: 38px;
+    background: #6fb2f4;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 17px;
+    border-bottom: 1px solid #609ad3;
+    -webkit-box-shadow: 0px 2px 0px 0px #518fae;
+    -moz-box-shadow: 0px 2px 0px 0px #518fae;
+    box-shadow: 0px 2px 0px 0px #518fae;
+}
+.choice .add-data-set i{
+	padding-right: 10px;
+}
+
+.choice .add-data-set a:active {
+    border-bottom: none;
+    border-top: 1px solid #609ad3;
+    -webkit-box-shadow: 0px -2px 0px 0px #518fae;
+    -moz-box-shadow: 0px -2px 0px 0px #518fae;
+    box-shadow: 0px -2px 0px 0px #518fae;
+}
+
+.search-form {
+    margin-bottom: 16px;
+	position: relative;
+}
+.search-form  .icon {
+	width: 40px;
+    display: block;
+    position: absolute;
+    text-align: center;
+    background: #75b7f5;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    color: #fff;
+    border-right: 2px solid #5a91c7;
+}
+
+.search-form  .icon  i{
+    vertical-align: -70%;
+}
+
+.data-set {
+	overflow: hidden; 
+}
+
+.data-set-inner {
+    float: left;
+    padding: 15px;
+    background: #fff;
+    border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px; 
+    margin: 10px 20px 20px 20px;
+    box-shadow: 0px 15px 10px -10px #deeaf7;
+}
+
+.data-set-inner input {
+    height: 34px;
+    padding: 0 20px 0 50px;
+    border: 2px solid #5a91c7;
+	border-radius: 4px;
+    font-size: 14px;
+}
+
+.data-set table { 
+	line-height: 2;
+	border-collapse: collapse; 
+	text-align: left; 
+	width: initial;
+	border: 1px solid #DBDBDB;
+}
+
+.data-set table td, .data-set table th { 
+	padding: 3px 10px; 
+}
+
+.data-set table thead th {
+	background: #5a91c7;
+    font-weight: bold;
+    border-left: 1px solid #fff;
+} 
+
+.data-set table thead th i {
+    vertical-align: 15%;
+}
+
+.data-set table thead th a{
+	text-decoration:none;
+    color: #fff;
+} 
+
+.data-set table thead th.active, 
+.data-set table thead th:hover { 
+	background: #4171a0;
+}
+.data-set table thead th:first-child { 
+	border: none; 
+}
+.data-set table tbody td { 
+	color: #111111; 
+	border-left: 1px solid #DBDBDB;
+	font-size: 14px;
+	font-weight: normal; 
+}
+.data-set table tbody tr:nth-child(even) {
+	background: #ddeeff; 
+}
+.data-set table tbody tr:nth-child(odd) {
+	background: #FFF;
+}
+.data-set table tbody td:first-child { 
+	border-left: none; 
+}
+.data-set table tbody tr:last-child td { 
+	border-bottom: none; 
+}
+.data-set table tfoot td div { 
+    width: 100%;
+	border-top: 1px solid #DBDBDB;
+} 
+.data-set table tfoot td { 
+	padding: 0; font-size: 14px 
+} 
+.data-set table tfoot td div{ 
+	padding: 2px; 
+}
+.data-set table tfoot td ul { 
+	margin: 0; padding:0; list-style: none; text-align: right; 
+}
+.data-set table tfoot  li { 
+	display: inline; 
+}
+.data-set table tfoot li a { 
+	text-decoration: none; 
+	display: inline-block;  
+	padding: 2px 8px; 
+	margin: 1px;
+	color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px; 
+	border-radius: 3px; 
+	background:#5a91c7
+}
+
+.data-set table tfoot ul li.disabled a, .data-set table tfoot ul.disabled,
+.data-set table tfoot ul li.disabled a:hover{
+    background: #c7c7c7;
+}
+
+.data-set table tfoot ul li.active a ,.data-set table tfoot ul.active,
+.data-set table tfoot ul a:hover { 
+	background: #4171a0;
+}
+
+.data-set .current-row {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+	float: left;
+    padding: 10px;
+    border: 1px solid #DBDBDB;
+}
+
+.data-set .current-row li {
+    padding: 5px 0;
+}
