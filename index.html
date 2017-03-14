@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" ng-app="store">
   <head>
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 						<th ng-repeat="(headerKey, headerValue) in dataSet.headers" ng-click="setSortProp(headerKey, dataSet.tableIndex)"><a href >{{headerValue}} <i class="fa fa-sort-desc" aria-hidden="true"></i></a></th>
 					</thead>
 					<tbody>
-						<tr ng-repeat="listItem in dataSet.pagedItems[dataSet.currentPage]| orderBy:dataSet.sortType:dataSet.sortReverse| filter:searchField" ng-click="showCurrentRow(dataSet.currentPage, $index, dataSet.tableIndex)"> 
+						<tr ng-repeat="listItem in dataSet.pagedItems[dataSet.currentPage]| orderBy:dataSet.sortType:dataSet.sortReverse| filter:searchField" ng-click="showCurrentRow(listItem, dataSet.tableIndex)"> 
 							<td ng-repeat="(listItemKey, listItemValue) in listItem">{{listItemValue}}</td>
 					</tbody>
 					<tfoot ng-show="dataSet.needPagination">

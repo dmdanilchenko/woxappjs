@@ -23,8 +23,8 @@
 			groupToPages($scope.dataSets[tableIndex]);
 		}
 		
-		$scope.showCurrentRow = function(currentPage, rowIndex, tableIndex) {
-			$scope.dataSets[tableIndex].currentRow = $scope.dataSets[tableIndex].pagedItems[currentPage][rowIndex];
+		$scope.showCurrentRow = function(row, tableIndex) {
+			$scope.dataSets[tableIndex].currentRow = row;
 		}
 		$scope.getDataSet = function() {
 			
